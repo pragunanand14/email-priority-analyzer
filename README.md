@@ -11,7 +11,7 @@
 
 1. **Navigate to project:**
 ```
-cd "c:/Users/Pragun/Desktop/Hackathon/ai-email-triage-browser-extension"
+cd "c:/Users/Pragun/ai-email-triage-browser-extension"
 ```
 
 2. **Create virtual environment:**
