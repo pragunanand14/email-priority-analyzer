@@ -1,0 +1,242 @@
+/* dashboard.css - Modern dashboard styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  margin-bottom: 24px;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #7f8c8d;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+header p span {
+  font-weight: 700;
+  color: #667eea;
+}
+
+#refreshBtn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#refreshBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+#sections {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section h2 .count {
+  background: rgba(255,255,255,0.5);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.cards::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cards::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.card {
+  border: 2px solid #e8ecff;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.2s;
+  cursor: pointer;
+  background: #fafbff;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border-color: #667eea;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1.4;
+  flex: 1;
+  margin-right: 12px;
+}
+
+.priority {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.priority.high { background: #ff4757; color: white; }
+.priority.medium { background: #ffa502; color: white; }
+.priority.low { background: #2ed573; color: white; }
+.priority.spam { background: #747d8c; color: white; }
+
+.preview {
+  color: #5b6b7a;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  max-height: 3em;
+  overflow: hidden;
+}
+
+.details {
+  display: flex;
+  gap: 16px;
+}
+
+.detail {
+  font-size: 13px;
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.loading, .empty, .error {
+  text-align: center;
+  padding: 60px 40px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.loading {
+  color: #667eea;
+}
+
+.loading::before {
+  content: '🔄 ';
+  font-size: 24px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.empty {
+  color: #7f8c8d;
+}
+
+.empty p {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.error {
+  color: #e74c3c;
+  background: #fdf2f2;
+  border: 2px solid #fed7d7;
+}
+
+.empty-cards {
+  text-align: center;
+  color: #95a5a6;
+  font-style: italic;
+  padding: 40px 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Section backgrounds */
+.urgent { border-top: 6px solid #ff4757; }
+.moderate { border-top: 6px solid #ffa502; }
+.low { border-top: 6px solid #2ed573; }
+.spam { border-top: 6px solid #747d8c; }
+
+@media (max-width: 768px) {
+  body { padding: 10px; }
+  .cards { max-height: 300px; }
+}
+

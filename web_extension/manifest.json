@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Email Triage",
+  "version": "1.2",
+  "description": "AI-powered Gmail inbox triage dashboard",
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "host_permissions": ["http://127.0.0.1:5000/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

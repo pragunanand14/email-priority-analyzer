@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Email Triage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Email Triage</h1>
+      <p>Paste email text for instant analysis</p>
+    </header>
+    
+    <textarea id="emailText" placeholder="Paste your email content here...&#10;Example: My account is locked and payment failed. Please help urgently."></textarea>
+    
+    <button id="analyzeBtn">Analyze Email</button>
+    
+<button id="dashboardBtn" class="dashboard-btn">📊 Open Dashboard</button>
+
+    
+    <div id="result" class="result hidden">
+      <div class="result-row">
+        <span class="label">Category:</span>
+        <span id="category" class="value"></span>
+      </div>
+      <div class="result-row">
+        <span class="label">Priority:</span>
+        <span id="priority" class="value priority"></span>
+      </div>
+      <div class="result-row">
+        <span class="label">Department:</span>
+        <span id="department" class="value"></span>
+      </div>
+    </div>
+    
+    <div id="loading" class="loading hidden">🤖 Analyzing with AI...</div>
+    <div id="error" class="error hidden"></div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
+
